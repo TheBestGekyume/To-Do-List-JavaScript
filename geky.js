@@ -6,7 +6,6 @@ const ArrayTarefas = [
 
 ];
 
-
 function menuText() {
     let margem = 7, result;
     result = "-".repeat(margem) + " MENU PRINCIPAL " + "-".repeat(margem) + "\n";
@@ -35,7 +34,8 @@ function escolherOpc (opc){
         case 2:
     }
 }
-const option = 6;
+
+let option = 2;
 
 do{
     console.log(menuText())
@@ -43,4 +43,3 @@ do{
 }while(option !== 0)
 
 escolherOpc(option)
-
