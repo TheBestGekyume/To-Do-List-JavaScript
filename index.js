@@ -1,4 +1,4 @@
-const prompt = require("readline-sync");
+import { question } from "readline-sync";
 
 const ArrayTarefas = [
 //   { id: 1, title: "Exemplo", description: "exemplo", status: "concluído" },
