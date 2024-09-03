@@ -1,11 +1,10 @@
-import { question } from "readline-sync";
+const prompt = require("readline-sync");
 
 const ArrayTarefas = [
 //   { id: 1, title: "Exemplo", description: "exemplo", status: "concluído" },
 //   { id: 2, title: "Exemplo", description: "exemplo", status: "concluído" },
 
 ];
-
 
 function menuText() {
     let margem = 7, result;
@@ -35,7 +34,8 @@ function escolherOpc (opc){
         case 2:
     }
 }
-const option = 6;
+
+let option = 2;
 
 do{
     console.log(menuText())
@@ -43,4 +43,3 @@ do{
 }while(option !== 0)
 
 escolherOpc(option)
-
