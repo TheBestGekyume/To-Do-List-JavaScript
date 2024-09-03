@@ -1,5 +1,6 @@
-const prompt = require("readline-sync");
+import { question } from "readline-sync";
 
-const teste = prompt.question("Qual seu nome? ");
+const teste = question("Qual seu nome? ");
 
 console.log("Olá " + teste);
+
