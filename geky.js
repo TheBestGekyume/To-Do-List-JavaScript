@@ -1,4 +1,6 @@
 import prompt from "readline-sync";
+import { exec } from 'child_process';
+exec('chcp 65001'); //fix readline-sync UTF-8
 
 // const ArrayTarefas = [
 //   { id: 1, title: "Exemplo", description: "exemplo", status: "concluído" },
