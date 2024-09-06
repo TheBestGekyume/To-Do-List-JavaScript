@@ -31,6 +31,7 @@ function escolherOpc(opc) {
             break;
 
         case 3:
+            console.log("Deletar tarefa");
             deleteTarefa(taskList);
             break;
 
@@ -53,7 +54,7 @@ function deleteTarefa(taskList) {
     console.log("Excluir Tarefa");
 
     if (taskList.length === 0) {
-        console.log("Não há tarefas para excluir.");
+        console.log("Não há tarefas disponíveis para excluir.");
         return;
     }
 
@@ -75,6 +76,7 @@ function deleteTarefa(taskList) {
         console.log("Tarefa não encontrada com o ID fornecido.");
     }
 }
+
 
 let option;
 
