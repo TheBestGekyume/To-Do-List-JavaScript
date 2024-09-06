@@ -98,12 +98,12 @@ function editarTarefa(arrayTarefas) {
   const tarefa = arrayTarefas.get(prompt.questionInt("Digite o ID da Tarefa: "));
 
   if (tarefa) {
-    const title = prompt.question("Digite o novo título da Tarefa: ");
-    const description = prompt.question("Digite a nova descrição da Tarefa: ");
-    const status = prompt.question("Digite o novo status da Tarefa: ");
-    tarefa.title = title;
-    tarefa.description = description;
-    tarefa.status = status;
+    const TitleNovo = prompt.question("Digite o novo título da Tarefa: ");
+    const descriptionNova = prompt.question("Digite a nova descrição da Tarefa: ");
+    const statusNovo = prompt.question("Digite o novo status da Tarefa: ");
+    tarefa.title = TitleNovo;
+    tarefa.description = descriptionNova;
+    tarefa.status = statusNovo;
     console.log("Tarefa atualizada com sucesso!");
   } else {
     console.log("Tarefa não encontrada.");
