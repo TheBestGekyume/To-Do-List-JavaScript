@@ -96,15 +96,38 @@ function verificarTitulo(arrayTarefas, title) {
 function editarTarefa(arrayTarefas) {
     
   const tarefa = arrayTarefas.get(prompt.questionInt("Digite o ID da Tarefa: "));
-
+  let optionEdit;
   if (tarefa) {
-    const TitleNovo = prompt.question("Digite o novo título da Tarefa: ");
-    const descriptionNova = prompt.question("Digite a nova descrição da Tarefa: ");
-    const statusNovo = prompt.question("Digite o novo status da Tarefa: ");
-    tarefa.title = TitleNovo;
-    tarefa.description = descriptionNova;
-    tarefa.status = statusNovo;
-    console.log("Tarefa atualizada com sucesso!");
+    do {
+      optionEdit = prompt.question(
+        "O que deseja editar?\n[1] - Titulo\n[2] - Descrição\n[3] - Status \n [4] - Sair\n"
+      )
+      switch (optionEdit) {
+        case '1':
+            const TitleNovo = prompt.question("Digite o novo título da Tarefa: ");
+            tarefa.title = TitleNovo;
+            console.log("Tarefa atualizada com sucesso!");
+          break;
+        case '2':
+            const descriptionNova = prompt.question("Digite a nova descrição da Tarefa: ");
+            tarefa.description = descriptionNova;
+            console.log("Tarefa atualizada com sucesso!");
+          break;
+        case '3':
+            const statusNovo = prompt.question("Digite o novo status da Tarefa: ");
+            tarefa.status = statusNovo;
+            console.log("Tarefa atualizada com sucesso!");
+          break;
+        case '4':
+          console.log("Saindo...");
+          break;
+  
+        default:1
+          console.log("Opção inválida. Tente novamente.");
+
+          
+        }
+      }while (optionEdit !== '4');
   } else {
     console.log("Tarefa não encontrada.");
   }
