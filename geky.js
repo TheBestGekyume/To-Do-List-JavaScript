@@ -23,15 +23,57 @@ function menuText() {
 
 // console.log(retorno)
 
-function escolherOpc (opc){
-    console.log("teste")
 
-    switch(opc){
+// Parte Larissa - Listar tarefas
+
+function listarTarefas() {
+    if (ArrayTarefas.length === 0) {
+        console.log("Não há tarefas salvas.");
+    } else {
+        console.log("\n=== Tarefas Salvas ===");
+        ArrayTarefas.forEach((tarefa) => {
+            console.log(`ID: ${tarefa.id}`);
+            console.log(`Título: ${tarefa.title}`);
+            console.log(`Descrição: ${tarefa.description}`);
+            console.log(`Status: ${tarefa.status}`);
+            console.log("---------------------------");
+        });
+    }
+}
+
+function escolherOpc(opc) {
+    switch(opc) {
         case 1:
-            console.log("primeira opc")
+            console.log("Adicionar tarefa");
+            
             break;
             
         case 2:
+            console.log("Atualizar tarefa");
+            
+            break;
+
+        case 3:
+            console.log("Deletar tarefa");
+            
+            break;
+
+        case 4:
+            listarTarefas(); 
+            break;
+
+        case 5:
+            console.log("Obter uma tarefa");
+        
+            break;
+
+        case 0:
+            console.log("Saindo...");
+            break;
+
+        default:
+            console.log("Opção inválida.");
+            break;
     }
 }
 
