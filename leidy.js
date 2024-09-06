@@ -50,6 +50,7 @@ function escolherOpc(opc) {
     }
 }
 
+
 function deleteTarefa(taskList) {
     console.log("Excluir Tarefa");
 
@@ -63,18 +64,21 @@ function deleteTarefa(taskList) {
     });
 
     const taskId = question("\nInforme o ID da tarefa que deseja excluir: ");
-    const taskIndex = taskList.findIndex(task => task.id == taskId);
+    
+    // Mapeamos a lista de tarefas, filtrando a tarefa com o ID fornecido
+    const newTaskList = taskList.filter(task => task.id != taskId);
 
-    if (taskIndex !== -1) {
-        const deletedTarefa = taskList.splice(taskIndex, 1)[0];
-        console.log(`\nTarefa com ID ${taskId} excluída com sucesso:`);
-        console.log("ID: " + deletedTarefa.id);
-        console.log("Atividade: " + deletedTarefa.title);
-        console.log("Descrição: " + deletedTarefa.description);
-        console.log("Status: " + deletedTarefa.status);
-    } else {
+    // Verifica se alguma tarefa foi excluída
+    if (newTaskList.length === taskList.length) {
         console.log("Tarefa não encontrada com o ID fornecido.");
+    } else {
+        console.log(`\nTarefa com ID ${taskId} excluída com sucesso.`);
+        newTaskList.forEach(task => {
+            console.log(`ID: ${task.id}, Título: ${task.title}, Status: ${task.status}`);
+        });
     }
+
+    return newTaskList;
 }
 
 
