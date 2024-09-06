@@ -13,9 +13,7 @@
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    
-  },
+  "bugs": {},
   "homepage": "",
   "dependencies": {
     "readline-sync": "^1.4.10"
