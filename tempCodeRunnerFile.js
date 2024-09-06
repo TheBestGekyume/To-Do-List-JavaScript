@@ -1,2 +1,1 @@
-
-const retorno = menuText();
+      console.log("Tarefa Excluída!\n\n");
