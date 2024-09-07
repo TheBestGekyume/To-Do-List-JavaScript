@@ -26,5 +26,5 @@ Execute o comando `node index.js` para iniciar o programa. Siga as instruções 
 
 - **Gekyume Serna** - [GitHub](https://github.com/TheBestGekyume)
 - **Yago Lima** - [GitHub](https://github.com/yagolc)
-- **Leide Olito** - [GitHub](https://github.com/LeidyOlinto)
+- **Leide Olinto** - [GitHub](https://github.com/LeidyOlinto)
 - **Larissa Rezende** - [GitHub](https://github.com/larissabrezende)
