@@ -1,9 +1,10 @@
-import prompt from "readline-sync";
 import { exec } from 'child_process';
+import prompt from "readline-sync";
 exec('chcp 65001'); //fix readline-sync UTF-8
 
 let taskList = new Map();
-let id = 1;
+let id = 2;
+taskList.set(1, { title:"To-Do-List", description:"Leia o README.md", status:"Concluído" });
 
 function menuText() {
   let margin = 7,
@@ -20,30 +21,34 @@ function menuText() {
 }
 
 function chooseOption(option) {
-  switch (option) {
-    case 0:
-      console.log("Programa Encerrado!");
-      break;
-    case 1:
-      addTask(taskList);
-      console.log("Tarefa Adicionada!\n\n");
-      break;
-    case 2:
-      updateTask(taskList);
-      break;
-    case 3:
-      taskList = deleteTask(taskList);
-      break;
-    case 4:
-        listAllTasks(taskList);
-      break;
-    case 5:
-      const taskId = prompt.questionInt("Digite o ID da tarefa que será exibida: ");
-      console.log(taskList.get(taskId));
-      break;
-    default:
-      console.log("Opção inválida. Tente novamente.");
-  }
+    try {
+      switch (option) {
+        case 0:
+          console.log("Programa Encerrado!");
+          break;
+        case 1:
+          addTask(taskList);
+          console.log("Tarefa Adicionada!\n\n");
+          break;
+        case 2:
+          updateTask(taskList);
+          break;
+        case 3:
+          taskList = deleteTask(taskList);
+          break;
+        case 4:
+          listAllTasks(taskList);
+          break;
+        case 5:
+          showTaskById(taskList);
+          break;
+
+        default:
+          console.log("Opção inválida. Tente novamente.");
+      }
+    } catch (error) {
+      console.log("Ocorreu um erro ao processar a sua solicitação. Tente novamente.");
+    }
 }
 
 let option;
@@ -59,7 +64,6 @@ do {
 
 // FUNÇÕES DE MANIPULAÇÃO DAS TAREFAS
 
-
 function addTask(taskList) {
   let title = prompt.question("Digite o Título da Tarefa: ");
   while (checkTitle(taskList, title)) {
@@ -72,7 +76,6 @@ function addTask(taskList) {
   id++;
 }
 
-
 function checkTitle(taskList, title) {
     for (let task of taskList.values()) {
       if (task.title === title) {
@@ -81,7 +84,6 @@ function checkTitle(taskList, title) {
     }
     return false;
 }
-
 
 function updateTask(taskList) {
     
@@ -95,7 +97,12 @@ function updateTask(taskList) {
         )
         switch (optionEdit) {
           case '1':
-              task.title = prompt.question("Digite o novo título da Tarefa: ");
+              let title = prompt.question("Digite o novo título da Tarefa: ");
+              while (checkTitle(taskList,title)) {
+                console.log("Uma tarefa com esse título já existe. Por favor, escolha um título diferente.");
+                title = prompt.question("Digite o Título da Tarefa: ");
+              }
+              task.title = title;
               console.log("Tarefa atualizada com sucesso!");
             break;
           case '2':
@@ -118,8 +125,6 @@ function updateTask(taskList) {
       console.log("Tarefa não encontrada.");
     }
 }
-
-
 
 function deleteTask(taskList) {
   console.log("Excluir Tarefa");
@@ -145,7 +150,6 @@ function deleteTask(taskList) {
   return taskList;
 }
 
-
 function listAllTasks(taskList) {
     if (taskList.length === 0) {
         console.log("Não há tarefas salvas.");
@@ -158,6 +162,23 @@ function listAllTasks(taskList) {
             console.log(`Status: ${task.status}`);
             console.log("---------------------------");
         });
+
+        console.log("\n===========================\n\n");
+        
+    }
+}
+
+function showTaskById(taskList) {
+    const taskId = prompt.questionInt("Digite o ID da tarefa que deseja exibir: ");
+    if (taskList.has(taskId)) {
+        const task = taskList.get(taskId);
+        console.log("---------------------------");
+        console.log(`Título: ${task.title}`);
+        console.log(`Descrição: ${task.description}`);
+        console.log(`Status: ${task.status}`);
+        console.log("---------------------------");
+    } else {
+        console.log("Tarefa não encontrada.");
     }
 }
 

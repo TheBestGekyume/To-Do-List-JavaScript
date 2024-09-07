@@ -1,14 +1,31 @@
-Lógica de Programação - Projeto final
-O que?
-Desenvolver, utilizando os conceitos abordados ao longo do módulo, uma aplicação de lista de tarefas (ToDo List).
+To-Do-List Lógica de Programação
 
-Requisitos
-Dentre as funcionalidades, espera-se que seja possível:
+Este é um sistema simples em Node.js para gerenciar tarefas através de um menu interativo no terminal.
 
-Adicionar uma tarefa
-Editar uma tarefa salva
-Remover uma tarefa salva
-Listar todas as tarefas salvas
-Obter uma tarefa, através de um parâmetro (id)
-Observações
-Não haverá a persistência das tarefas em banco de dados. Para isso, podem utilizar um array para armazenar a lista das tarefas cadastradas.
+Funcionalidades
+Adicionar Tarefa: Permite adicionar uma nova tarefa com título, descrição e status.
+Atualizar Tarefa: Permite editar o título, descrição ou status de uma tarefa existente pelo ID.
+Deletar Tarefa: Remove uma tarefa com base no seu ID.
+Listar Todas as Tarefas: Mostra todas as tarefas cadastradas.
+Obter uma Tarefa: Exibe detalhes de uma tarefa específica através do seu ID.
+
+Instalação e Uso
+
+Instalação:
+
+Clone este repositório.
+Certifique-se de ter o Node.js instalado.
+Execute npm install para instalar as dependências.
+
+Execução:
+
+Execute o comando node index.js para iniciar o programa.
+Siga as instruções no terminal para navegar pelo menu e utilizar as funcionalidades.
+
+
+Autores
+
+Gekyume Serna - https://github.com/TheBestGekyume
+Yago Lima - https://github.com/yagolc
+Leide Olito - https://github.com/LeidyOlinto
+Larissa Rezende - https://github.com/larissabrezende
