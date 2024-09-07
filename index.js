@@ -1,6 +1,6 @@
-import { exec } from "child_process";
+//Digite chcp 65001 no prompt para garantir o formato UTF-8
 import prompt from "readline-sync";
-exec("chcp 65001"); //fix readline-sync UTF-8
+
 
 const taskList = new Map();
 let id = 2;
