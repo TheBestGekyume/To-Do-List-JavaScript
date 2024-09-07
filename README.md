@@ -27,5 +27,5 @@ Autores
 
 Gekyume Serna - https://github.com/TheBestGekyume
 Yago Lima - https://github.com/yagolc
-Leide Olito - https://github.com/LeidyOlinto
+Leide Olinto - https://github.com/LeidyOlinto
 Larissa Rezende - https://github.com/larissabrezende
